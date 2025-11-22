@@ -53,8 +53,8 @@ if vim.g.neovim_mode == "skitty" then
     if line:match("%- %[ %]") then
       changed_line = line:gsub("%- %[ %]", "- [x]") -- If line is unchecked, check it
     elseif line:match("%- %[x%]") then
-      changed_line = line:gsub("%- %[x%]", "- [ ]")
-    end -- If line is checked, check it
+      changed_line = line:gsub("%- %[x%]", "- [ ]") -- If line is checked, check it
+    end
 
     vim.api.nvim_set_current_line(changed_line)
   end)
