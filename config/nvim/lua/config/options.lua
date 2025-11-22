@@ -1,8 +1,3 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
--- File: lua/config/options.lua
--- "Explore the Cosmos" Palette
 local cosmic_gold = "#E5C07B" -- Matches your folder icons & stars
 local cosmic_orange = "#D65D0E" -- Matches the rocket/poster accents
 local cosmic_text = "#EBDBB2" -- Warm beige text (Gruvbox style)
@@ -10,7 +5,7 @@ local subtle_gray = "#928374"
 local comp_gold = "#458588" -- Complimentary color to cosmic_gold
 
 -- Apply these colors to the Dashboard
-vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = cosmic_gold, bold = true }) -- The Header Art vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = cosmic_text }) -- The Icons
+vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = cosmic_gold, bold = true }) -- The Header Art
 vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = cosmic_orange, bold = true }) -- The Keys (1, 2, f)
 vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = cosmic_gold }) -- The text descriptions
 vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = cosmic_gold }) -- Icons
