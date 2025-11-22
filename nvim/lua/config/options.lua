@@ -1,6 +1,6 @@
 local cosmic_gold = "#E5C07B" -- Matches your folder icons & stars
 local cosmic_orange = "#D65D0E" -- Matches the rocket/poster accents
-local cosmic_text = "#EBDBB2" -- Warm beige text (Gruvbox style)
+local cosmic_text = "#EBDBB2" -- Warm beige text (Gruvbox)
 local subtle_gray = "#928374"
 local comp_gold = "#458588" -- Complimentary color to cosmic_gold
 
