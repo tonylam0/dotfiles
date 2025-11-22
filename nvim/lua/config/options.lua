@@ -80,20 +80,21 @@ if vim.g.neovim_mode == "skitty" then
     end,
   })
 
-  vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.md", -- Only sync markdown files (or use "*" for all)
-    callback = function()
-      -- We use jobstart so it runs in the background (async)
-      -- without freezing your editor while it pushes.
-      vim.fn.jobstart("git add . && git commit -m 'Auto-save: '\"$(date)\" && git push", {
-        on_exit = function(_, return_val)
-          if return_val == 0 then
-            print("Changes pushed to Git")
-          else
-            print("Git push failed")
-          end
-        end,
-      })
-    end,
-  })
+  -- This auto-syncs to gij
+  -- vim.api.nvim_create_autocmd("BufWritePost", {
+  --   pattern = "*.md", -- Only sync markdown files (or use "*" for all)
+  --   callback = function()
+  --     -- We use jobstart so it runs in the background (async)
+  --     -- without freezing your editor while it pushes.
+  --     vim.fn.jobstart("git add . && git commit -m 'Auto-save: '\"$(date)\" && git push", {
+  --       on_exit = function(_, return_val)
+  --         if return_val == 0 then
+  --           print("Changes pushed to Git")
+  --         else
+  --           print("Git push failed")
+  --         end
+  --       end,
+  --     })
+  --   end,
+  -- })
 end
