@@ -34,7 +34,7 @@ if vim.g.neovim_mode == "skitty" then
     else
       return "o"
     end
-  end, { expr = true })
+  end, { buffer = true, expr = true })
 
   -- B. Auto-create new task when pressing 'Enter' in Insert Mode
   vim.keymap.set("i", "<CR>", function()
@@ -44,7 +44,7 @@ if vim.g.neovim_mode == "skitty" then
     else
       return "<CR>"
     end
-  end, { expr = true })
+  end, { buffer = true, expr = true })
 
   vim.keymap.set("n", "<CR>", function()
     local line = vim.api.nvim_get_current_line()
@@ -57,7 +57,7 @@ if vim.g.neovim_mode == "skitty" then
     end -- If line is checked, check it
 
     vim.api.nvim_set_current_line(changed_line)
-  end)
+  end, { buffer = true })
 
   local function to_do_template()
     -- local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
@@ -71,13 +71,9 @@ if vim.g.neovim_mode == "skitty" then
     vim.cmd("startinsert!") -- Exclamation mark sets cursor after
   end
 
-  vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
+  vim.api.nvim_create_autocmd("BufNewFile", {
     pattern = "*.md",
-    callback = function()
-      if vim.api.nvim_buf_line_count(0) == 1 and vim.api.nvim_get_current_line() == "" then
-        to_do_template()
-      end
-    end,
+    callback = to_do_template, -- If i added () to the function, it runs it immediately before the function is even created
   })
 
   vim.api.nvim_create_autocmd("BufWritePost", {
