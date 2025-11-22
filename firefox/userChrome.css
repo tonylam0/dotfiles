@@ -1,15 +1,11 @@
-/* --- GRUVBOX MATERIAL HARD (TRANSPARENT EDITION) --- */
-/* Custom CSS file for a transparent, Gruvbox-themed Firefox UI. */
-
 :root {
-    /* 1. GRUVBOX COLORS WITH ALPHA TRANSPARENCY (85%-90% OPAQUE) */
-    /* Base Background: #1d2021 converted to RGBA */
+    /* Base background: #1d2021 converted to RGBA */
     --gruv-bg: rgba(29, 32, 33, 0.85) !important; 
     
-    /* Active Card Background: #32302f converted to RGBA */
+    /* Active card background: #32302f converted to RGBA */
     --gruv-card: rgba(50, 48, 47, 0.90) !important; 
     
-    /* Text Colors */
+    /* Text colors */
     --gruv-fg: #ebdbb2 !important;      /* Cream Text */
     --gruv-muted: #a89984 !important;   /* Dimmed Text */
     
@@ -26,32 +22,14 @@
     --tab-min-height: 32px !important; 
 }
 
-/* --- 2. GLOBAL FONT & SIZE --- */
+/* Global font and size */
 * {
     font-family: "JetBrainsMono Nerd Font", monospace !important;
     font-size: 13px !important;
 }
 
-/* --- 3. ENABLE WINDOW FRAME TRANSPARENCY --- */
-/* Forces the browser frame and UI elements to be transparent */
-#main-window, 
-body, 
-#navigator-toolbox, 
-#sidebar-box, 
-#sidebar-main,
-#browser-panel {
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* Keep the actual website content SOLID for reading */
-#appcontent, 
-#tabbrowser-tabpanels {
-    background-color: #1d2021 !important; 
-}
-
-/* --- 4. TAB BAR STYLING --- */
-/* The Active Tab - The "Card" Look */
+/* TAB BAR STYLING */
+/* Active tab */
 .tabbrowser-tab[selected="true"] .tab-background {
     background-color: var(--gruv-card) !important;
     border: 1px solid var(--gruv-border) !important;
@@ -60,7 +38,7 @@ body,
     box-shadow: none !important;
 }
 
-/* Inactive Tabs - See-through and muted */
+/* Inactive tabs */
 .tabbrowser-tab:not([selected="true"]) .tab-background {
     background-color: transparent !important;
     border: none !important;
@@ -70,7 +48,7 @@ body,
     opacity: 0.8;
 }
 
-/* --- 5. URL BAR STYLING --- */
+/* URL BAR STYLING */
 #urlbar-background {
     background-color: var(--gruv-card) !important;
     border: 1px solid var(--gruv-border) !important;
@@ -79,7 +57,6 @@ body,
 #urlbar-input { color: var(--gruv-fg) !important; }
 .urlbar-icon { fill: var(--gruv-muted) !important; }
 
-/* --- 6. CLEANUP --- */
 /* Removes the line under the tabs */
 #nav-bar {
     box-shadow: none !important;
