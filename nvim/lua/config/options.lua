@@ -23,8 +23,8 @@ if vim.g.neovim_mode == "skitty" then
   vim.opt.signcolumn = "no"
   vim.opt.textwidth = 80
 
-  -- Changes the top of the bar to have the file name (date) and my name
-  vim.opt.winbar = '%#WinBar1# %{luaeval(\'vim.fn.fnamemodify(vim.fn.expand("%:t"), ":r")\')}%*%=%#WinBar1# tonycs %*'
+  -- Changes winbar to have the file name (date) and my name
+  vim.opt.winbar = " %{expand('%:t:r')} %= tonycs "
 
   vim.keymap.set("n", "o", function()
     local line = vim.api.nvim_get_current_line()
@@ -68,7 +68,7 @@ if vim.g.neovim_mode == "skitty" then
 
     vim.api.nvim_buf_set_lines(0, 0, -1, false, template)
     vim.api.nvim_win_set_cursor(0, { 1, 6 }) -- Puts cursor at first task box
-    vim.cmd("startinsert!") -- Exclamation mark sets cursor after
+    vim.cmd("startinsert!") -- Exclamation mark sets cursor after character
   end
 
   vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {

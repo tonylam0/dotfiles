@@ -5,3 +5,7 @@
 vim.keymap.set("n", "<leader>D", function()
   Snacks.dashboard.open()
 end, { desc = "Open Dashboard" })
+
+vim.keymap.set("n", "<leader>m", function()
+  vim.cmd("MarkdownPreview")
+end, { desc = "Run MarkdownPreview" })
