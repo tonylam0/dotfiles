@@ -23,7 +23,7 @@ if vim.g.neovim_mode == "skitty" then
   vim.opt.signcolumn = "no"
   vim.opt.textwidth = 80
 
-  -- Changes winbar to have the file name (date) and my name
+  -- Changes the top of the bar to have the file name (date) and my name
   vim.opt.winbar = " %{expand('%:t:r')} %= tonycs "
 
   vim.keymap.set("n", "o", function()
