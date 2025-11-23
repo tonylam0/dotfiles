@@ -17,7 +17,9 @@ vim.keymap.set("v", "<leader>h", "<Home>", { desc = "Go to start of line" })
 vim.keymap.set("v", "<leader>j", "<End>", { desc = "Go to end of line" })
 vim.keymap.set("n", "<leader>p", ":put _<CR>", { desc = "Add blank line below" })
 
-vim.keymap.set("n", "y<leader>h", "y0", { desc = "Yank to start of line" })
-vim.keymap.set("n", "y<leader>j", "y$", { desc = "Yank to end of line" })
+vim.keymap.set("n", "yy", "y0", { desc = "Yank to start of line" })
+vim.keymap.set("n", "yu", "y$", { desc = "Yank to end of line" })
+vim.keymap.set("n", "yi", "yG", { desc = "Yank to end of line" })
+vim.keymap.set("n", "yg", "vggy", { desc = "Yank to end of line" })
 
 vim.keymap.set("n", "gh", "G", { desc = "Last line" })

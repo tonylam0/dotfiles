@@ -42,10 +42,10 @@ cmd + alt - j : yabai -m window --grid 2:2:1:0:1:1
 cmd + alt - k : yabai -m window --grid 2:2:0:1:1:1
 cmd + alt - l : yabai -m window --grid 2:2:1:1:1:1
 
-# Fullscreen (Zoom) - "Alt + F" is easier than "Cmd + Alt + /"
+# Fullscreen (Zoom) 
 cmd + shift - return : yabai -m window --toggle zoom-fullscreen
 
-# Fullscreen (Maximize Float) - Use this for floating windows
+# Fullscreen (Maximize Float)
 cmd + alt - return : yabai -m window --grid 1:1:0:0:1:1
 
 # Toggle Float
