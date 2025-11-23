@@ -23,3 +23,6 @@ vim.keymap.set("n", "yi", "yG", { desc = "Yank to end of line" })
 vim.keymap.set("n", "yg", "vggy", { desc = "Yank to end of line" })
 
 vim.keymap.set("n", "gh", "G", { desc = "Last line" })
+
+vim.keymap.set("n", "x", '"_x', { desc = "Delete without yanking" })
+vim.keymap.set("v", "x", '"_x', { desc = "Delete without yanking" })

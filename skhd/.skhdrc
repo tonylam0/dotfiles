@@ -1,7 +1,7 @@
-# Open Kitty 
+# Open kitty 
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
-# Focus Window 
+# Focus window 
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
@@ -12,47 +12,53 @@ alt - down  : yabai -m window --focus south
 alt - up    : yabai -m window --focus north
 alt - right : yabai -m window --focus east
 
-# Swap Window 
+# Swap window 
 shift + alt - h : yabai -m window --swap west
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
-shift + alt - left  : yabai -m window --swap west
-shift + alt - down  : yabai -m window --swap south
-shift + alt - up    : yabai -m window --swap north
+shift + alt - left : yabai -m window --swap west
+shift + alt - down : yabai -m window --swap south
+shift + alt - up : yabai -m window --swap north
 shift + alt - right : yabai -m window --swap east
 
-# Resize Window 
-ctrl + alt - left  : yabai -m window --resize left:-20:0
-ctrl + alt - down  : yabai -m window --resize bottom:0:20
-ctrl + alt - up    : yabai -m window --resize top:0:-20
-ctrl + alt - right : yabai -m window --resize right:20:0
+# Resize window (make them bigger) 
+cmd + alt - h : yabai -m window --resize left:-20:0
+cmd + alt - j : yabai -m window --resize bottom:0:20
+cmd + alt - k : yabai -m window --resize top:0:-20
+cmd + alt - l : yabai -m window --resize right:20:0
 
-# Grid / Split Layouts (Only for floating windows) 
-# Half Screens
+# Resize window (make them smaller)
+cmd + ctrl + alt - h : yabai -m window --resize right:-20:0
+cmd + ctrl + alt - j : yabai -m window --resize top:0:20
+cmd + ctrl + alt - k : yabai -m window --resize bottom:0:-20
+cmd + ctrl + alt - l : yabai -m window --resize left:20:0
+
+# Toggle fullscreen (non-float)
+cmd + shift - return : yabai -m window --toggle zoom-fullscreen
+
+# Toggle float
+ctrl - space : yabai -m window --toggle float
+
+# Grid/split layouts (only for floating windows) 
+# Fullscreen
+cmd + alt - return : yabai -m window --grid 1:1:0:0:1:1
+
+# Half screens
 cmd + alt - left  : yabai -m window --grid 1:2:0:0:1:1
 cmd + alt - right : yabai -m window --grid 1:2:1:0:1:1
 cmd + alt - up    : yabai -m window --grid 2:1:0:0:1:1
 cmd + alt - down  : yabai -m window --grid 2:1:0:1:1:1
 
-# Quarter Screens
-cmd + alt - h : yabai -m window --grid 2:2:0:0:1:1
-cmd + alt - j : yabai -m window --grid 2:2:1:0:1:1
-cmd + alt - k : yabai -m window --grid 2:2:0:1:1:1
-cmd + alt - l : yabai -m window --grid 2:2:1:1:1:1
+# Move floating window
+cmd + ctrl + alt - left  : yabai -m window --move rel:-20:0
+cmd + ctrl + alt - down  : yabai -m window --move rel:0:20
+cmd + ctrl + alt - up    : yabai -m window --move rel:0:-20
+cmd + ctrl + alt - right : yabai -m window --move rel:20:0
 
-# Fullscreen (Zoom) 
-cmd + shift - return : yabai -m window --toggle zoom-fullscreen
-
-# Fullscreen (Maximize Float)
-cmd + alt - return : yabai -m window --grid 1:1:0:0:1:1
-
-# Toggle Float
-ctrl - space : yabai -m window --toggle float
-
-# Balance (Reset sizes)
+# Balance (reset sizes)
 ctrl + alt - return : yabai -m space --balance
 
-# Rotate Layout
+# Rotate layout
 alt - return : yabai -m space --rotate 90
