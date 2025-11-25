@@ -19,10 +19,11 @@ vim.keymap.set("n", "<leader>p", ":put _<CR>", { desc = "Add blank line below" }
 
 vim.keymap.set("n", "yy", "y0", { desc = "Yank to start of line" })
 vim.keymap.set("n", "yu", "y$", { desc = "Yank to end of line" })
-vim.keymap.set("n", "yi", "yG", { desc = "Yank to end of line" })
-vim.keymap.set("n", "yg", "vggy", { desc = "Yank to end of line" })
+vim.keymap.set("n", "yi", "yG", { desc = "Yank to last line" })
 
-vim.keymap.set("n", "gh", "G", { desc = "Last line" })
+vim.keymap.set("n", "gh", "Gzz", { desc = "Last line" })
 
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without yanking" })
 vim.keymap.set("v", "x", '"_x', { desc = "Delete without yanking" })
+
+vim.keymap.set("t", "<Esc><Esc>", "<C-/><C-n>", { desc = "Go to normal mode" })
