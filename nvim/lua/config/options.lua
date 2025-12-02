@@ -12,6 +12,14 @@ vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = cosmic_gold }) -- Icons
 
 vim.g.neovim_mode = vim.env.NEOVIM_MODE or "default"
 vim.opt.swapfile = false
+vim.opt.wrap = false
+vim.g.netrw_hide = 0
+
+-- Remove comment-related auto-formatting flags for all file types
+-- 'c': auto-wrap comments
+-- 'r': auto-insert comment leader on <Enter>
+-- 'o': auto-insert comment leader on 'o' or 'O'
+vim.opt.formatoptions:remove({ "c", "r", "o" })
 
 if vim.g.neovim_mode == "skitty" then
   vim.opt.relativenumber = false

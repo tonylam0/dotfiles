@@ -2,10 +2,10 @@
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # Focus window 
-alt - left  : yabai -m window --focus west
-alt - down  : yabai -m window --focus south
-alt - up    : yabai -m window --focus north
-alt - right : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
 # Swap window 
 shift + alt - h : yabai -m window --swap west
@@ -37,10 +37,6 @@ cmd + shift - return : yabai -m window --toggle zoom-fullscreen
 ctrl - space : yabai -m window --toggle float
 
 # Focus window (for floats)
-# The || is for wrap arounds if you are on the last window, you go to the first window and vice versa
-alt - j : yabai -m window --focus prev || yabai -m window --focus last
-alt - k : yabai -m window --focus next || yabai -m window --focus first
-
 # Grid/split layouts (only for floating windows) 
 # Fullscreen
 cmd + alt - return : yabai -m window --grid 1:1:0:0:1:1
@@ -58,7 +54,7 @@ cmd + ctrl + alt - up    : yabai -m window --move rel:0:-20
 cmd + ctrl + alt - right : yabai -m window --move rel:20:0
 
 # Balance (reset sizes)
-ctrl + alt - return : yabai -m space --balance
+cmd + alt - space : yabai -m space --balance
 
 # Rotate layout
 alt - return : yabai -m space --rotate 90
