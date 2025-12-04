@@ -1,0 +1,144 @@
+(
+    address: "127.0.0.1:6600",
+    theme: Some("gruvbox"),
+    cache_dir: None,
+    on_click: None,
+    album_art: (
+        method: Auto,
+        vertical_align: Top,
+    ),
+    
+    keybinds: (
+        global: {
+            "q": Quit,
+            ":": CommandMode,
+            ",": VolumeDown,
+            ".": VolumeUp,
+            "H": PreviousTab,
+            "L": NextTab,
+            "S": Stop,
+            "<Space>": TogglePause,
+            "r": ToggleRepeat,
+            "z": ToggleRandom,
+            "n": NextTrack, 
+            "p": PreviousTrack,
+            "c": ToggleConsume,
+            "s": ToggleSingle,
+            "/": SwitchToTab("Search"),
+        },
+        
+        navigation: {
+            "j": Down,
+            "k": Up,
+            "h": Left,
+            "l": Right,
+            "<CR>": Confirm,
+            "a": Add,    
+            "A": AddAll,
+            "m": Select,
+            "<Esc>": Close,
+            "g": Top,
+            "G": Bottom,
+            "P": Save(kind: Modal()),
+        },
+
+        queue: {
+            "d": Delete,
+            "D": DeleteAll,
+            "<CR>": Play,
+        },
+    ),
+
+    tabs: (
+        [
+            (
+                name: "Queue",
+                pane: Split(
+                    direction: Vertical,
+                    panes: [
+                        (
+                            size: "100%",
+                            pane: Split(
+                                direction: Horizontal,
+                                panes: [
+                                    (
+                                        size: "35%",
+                                        pane: Split(
+                                            direction: Vertical,
+                                            panes: [
+                                                (
+                                                    size: "72%",
+                                                    borders: ("BOTTOM"),
+                                                    pane: Pane(AlbumArt),
+                                                ),
+                                                (
+                                                    size: "28%",
+                                                    pane: Pane(Cava),
+                                                ),
+                                           ],
+                                        ),
+                                    ),
+                                    (
+                                        size: "65%",
+                                        borders: ("LEFT"),
+                                        pane: Pane(Queue),
+                                    ),
+                                ],
+                            ),
+                        ),
+                    ],
+                ),
+            ),
+            (
+                name: "Directories",
+                pane: Pane(Directories),
+            ),
+            (
+                name: "Artists",
+                pane: Pane(Artists),
+            ),
+            (
+                name: "Albums",
+                pane: Pane(Albums),
+            ),
+            (
+                name: "Playlists",
+                pane: Pane(Playlists),
+            ),
+            (
+                name: "Search",
+                pane: Pane(Search),
+            ),
+        ]
+    ),
+
+    cava: (
+
+        framerate: 60, // default 60
+        autosens: true, // default true
+        sensitivity: 100, // default 100
+        lower_cutoff_freq: Some(50), // not passed to cava if not provided
+        higher_cutoff_freq: Some(10000), // not passed to cava if not provided
+
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: Some(44100),
+            channels: Some(2),
+            sample_bits: Some(16),
+
+        ),
+
+        smoothing: (
+            noise_reduction: 77, // default 77
+            monstercat: false, // default false
+            waves: false, // default false
+
+        ),
+
+        // this is a list of floating point numbers thats directly passed to cava
+        // they are passed in order that they are defined
+        eq: []
+
+    ),
+)

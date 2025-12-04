@@ -1,6 +1,12 @@
 # Open kitty 
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
+# Desktop switches
+cmd + alt + ctrl + shift - h : skhd -k "ctrl - h"
+cmd + alt + ctrl + shift - j : skhd -k "ctrl - j"
+cmd + alt + ctrl + shift - k : skhd -k "ctrl - k"
+cmd + alt + ctrl + shift - l : skhd -k "ctrl - l"
+
 # Focus window 
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
