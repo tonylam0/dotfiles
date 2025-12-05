@@ -8,9 +8,12 @@ cmd + alt + ctrl + shift - k : skhd -k "ctrl - 3"
 cmd + alt + ctrl + shift - l : skhd -k "ctrl - 4"
 cmd + alt + ctrl + shift - p : skhd -k "ctrl - 5"
 cmd + alt + ctrl + shift - d : skhd -k "ctrl - 6"
+cmd + alt + ctrl + shift - 7 : skhd -k "ctrl - 7"
 
 # MPD control
-cmd + alt + ctrl + shift - m : mpc toggle
+cmd + alt + ctrl + shift - space : mpc toggle
+cmd + alt + ctrl + shift - n : mpc next
+cmd + alt + ctrl + shift - p : mpc prev
 
 # Focus window 
 alt - h : yabai -m window --focus west

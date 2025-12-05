@@ -52,8 +52,8 @@
         // [Start, Fill, Thumb, Track, End]
         symbols: ["", "█", "█", "█", ""],
         track_style: (fg: "#3c3836"), // Gruvbox bg1
-        elapsed_style: (fg: "#D65D0E"), // Gruvbox Orange
-        thumb_style: (fg: "#fe8019"),   
+        elapsed_style: (fg: "#83a598"), // Gruvbox Orange
+        thumb_style: (fg: "#c4c4c4"),   
         use_track_when_empty: true,
     ),
 
@@ -119,18 +119,23 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "#fabd2f", modifiers: "Bold")),
-                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "#fabd2f", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "#fabd2f", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#83a598", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "#83a598", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#83a598", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#83a598", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "#83a598", modifiers: "Bold"))
+                    ),
+                    (kind: Text(" - "), style: (fg: "#83a598", modifiers: "Bold")),
+                    (kind: Property(Song(Album)), style: (fg: "#83a598", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Album"), style: (fg: "#83a598", modifiers: "Bold"))
                     )
                 ],
                 right: [
                     (kind: Property(Widget(ScanStatus)), style: (fg: "#83a598")),
                     (kind: Property(Widget(Volume)), style: (fg: "#83a598"))
+
                 ]
             ),
             (
@@ -143,12 +148,8 @@
                     (kind: Text(" kbps)"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#fabd2f", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "#fabd2f", modifiers: "Bold"))
-                    ),
-                    (kind: Text(" - ")),
-                    (kind: Property(Song(Album)),
-                        default: (kind: Text("Unknown Album"))
+                    (kind: Property(Song(Title)), style: (modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (modifiers: "Bold"))
                     )
                 ],
                 right: [
@@ -196,12 +197,14 @@
         // Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
         orientation: Bottom,
 
-        bar_color: Gradient({
-            0:  "rgb(204, 0, 0)",    // Deep Red
-            30:  "rgb(255, 69, 0)",   // Red-Orange (High Mid-Amplitude)
-            60:  "rgb(255, 128, 0)",  // Vivid Orange
-            90:   "rgb(255, 204, 0)",  // Bright Gold/Yellow (Low Amplitude)
-            100: "rgb(255, 255, 255)",// Pure White (Peak/Tip) - A bright peak contrast
-        })
+        bar_color: Single("#5e5e5e"),
+
+        // bar_color: Gradient({
+           // 0:  "rgb(204, 0, 0)",    // Deep Red
+           // 30:  "rgb(255, 69, 0)",   // Red-Orange (High Mid-Amplitude)
+           // 60:  "rgb(255, 128, 0)",  // Vivid Orange
+           // 90:   "rgb(255, 204, 0)",  // Bright Gold/Yellow (Low Amplitude)
+           // 100: "rgb(255, 255, 255)",// Pure White (Peak/Tip) - A bright peak contrast
+        // })
     ),
 )

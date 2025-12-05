@@ -26,6 +26,8 @@
             "s": ToggleSingle,
             "/": SwitchToTab("Search"),
             "u": Update,
+            "f": SeekForward,
+            "b": SeekBack,
         },
         
         navigation: {
@@ -40,7 +42,7 @@
             "<Esc>": Close,
             "g": Top,
             "G": Bottom,
-            "b": Save(kind: Modal()),
+            "t": Save(kind: Modal()),
             "d": Delete,
         },
 
@@ -94,6 +96,10 @@
             (
                 name: "Directories",
                 pane: Pane(Directories),
+            ),
+            (
+                name: "Visualizer",
+                pane: Pane(Cava),
             ),
             (
                 name: "Artists",
