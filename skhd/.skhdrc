@@ -2,10 +2,15 @@
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # Desktop switches
-cmd + alt + ctrl + shift - h : skhd -k "ctrl - h"
-cmd + alt + ctrl + shift - j : skhd -k "ctrl - j"
-cmd + alt + ctrl + shift - k : skhd -k "ctrl - k"
-cmd + alt + ctrl + shift - l : skhd -k "ctrl - l"
+cmd + alt + ctrl + shift - h : skhd -k "ctrl - 1"
+cmd + alt + ctrl + shift - j : skhd -k "ctrl - 2"
+cmd + alt + ctrl + shift - k : skhd -k "ctrl - 3"
+cmd + alt + ctrl + shift - l : skhd -k "ctrl - 4"
+cmd + alt + ctrl + shift - p : skhd -k "ctrl - 5"
+cmd + alt + ctrl + shift - d : skhd -k "ctrl - 6"
+
+# MPD control
+cmd + alt + ctrl + shift - m : mpc toggle
 
 # Focus window 
 alt - h : yabai -m window --focus west

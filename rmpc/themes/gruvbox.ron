@@ -197,10 +197,10 @@
         orientation: Bottom,
 
         bar_color: Gradient({
-            0:   "rgb(255, 204, 0)",  // Bright Gold/Yellow (Low Amplitude)
-            30:  "rgb(255, 128, 0)",  // Vivid Orange
-            60:  "rgb(255, 69, 0)",   // Red-Orange (High Mid-Amplitude)
-            90:  "rgb(204, 0, 0)",    // Deep Red
+            0:  "rgb(204, 0, 0)",    // Deep Red
+            30:  "rgb(255, 69, 0)",   // Red-Orange (High Mid-Amplitude)
+            60:  "rgb(255, 128, 0)",  // Vivid Orange
+            90:   "rgb(255, 204, 0)",  // Bright Gold/Yellow (Low Amplitude)
             100: "rgb(255, 255, 255)",// Pure White (Peak/Tip) - A bright peak contrast
         })
     ),

@@ -25,6 +25,7 @@
             "c": ToggleConsume,
             "s": ToggleSingle,
             "/": SwitchToTab("Search"),
+            "u": Update,
         },
         
         navigation: {
@@ -39,7 +40,8 @@
             "<Esc>": Close,
             "g": Top,
             "G": Bottom,
-            "P": Save(kind: Modal()),
+            "b": Save(kind: Modal()),
+            "d": Delete,
         },
 
         queue: {
