@@ -13,7 +13,7 @@ cmd + alt + ctrl + shift - 7 : skhd -k "ctrl - 7"
 # MPD control
 cmd + alt + ctrl + shift - space : mpc toggle
 cmd + alt + ctrl + shift - n : mpc next
-cmd + alt + ctrl + shift - p : mpc prev
+cmd + alt + ctrl + shift - m : mpc prev
 
 # Focus window 
 alt - h : yabai -m window --focus west

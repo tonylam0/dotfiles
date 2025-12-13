@@ -28,6 +28,7 @@
             "u": Update,
             "f": SeekForward,
             "b": SeekBack,
+            "r": SeekToStart,
         },
         
         navigation: {
@@ -50,6 +51,7 @@
             "d": Delete,
             "D": DeleteAll,
             "<CR>": Play,
+            "C": JumpToCurrent,
         },
     ),
 
