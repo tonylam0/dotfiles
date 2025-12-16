@@ -45,6 +45,7 @@
             "G": Bottom,
             "t": Save(kind: Modal()),
             "d": Delete,
+            "M": InvertSelection,
         },
 
         queue: {

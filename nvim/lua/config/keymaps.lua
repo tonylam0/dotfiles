@@ -22,7 +22,11 @@ vim.keymap.set("n", "yu", "y$", { desc = "Yank to end of line" })
 vim.keymap.set("n", "yi", "yG", { desc = "Yank to last line" })
 -- No need to make a keymap for yanking to first line -> ygg
 
-vim.keymap.set("n", "gh", "Gzz", { desc = "Last line" })
+-- Lua based function to avoid mistiming issues
+vim.keymap.set("n", "gh", function()
+  vim.cmd("normal! Gzz")
+end, { desc = "Last line centered" })
+
 vim.keymap.set("v", "gh", "G", { desc = "Last line" })
 
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without yanking" })
@@ -31,3 +35,6 @@ vim.keymap.set("v", "x", '"_x', { desc = "Delete without yanking" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-/><C-n>", { desc = "Go to normal mode" })
 
 vim.keymap.set("n", "<leader>uu", "<leader>ufuu<leader>uf", { desc = "Undo without auto-formatter" })
+
+-- Write Goyo command twice to reset Goyo mode
+vim.keymap.set("n", "<leader>gy", ":Goyo<CR>:Goyo<CR>", { desc = "Reset Goyo mode" })

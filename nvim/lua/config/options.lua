@@ -14,25 +14,18 @@ vim.g.neovim_mode = vim.env.NEOVIM_MODE or "default"
 vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.g.netrw_hide = 0
-
--- Remove comment-related auto-formatting flags for all file types
--- 'c': auto-wrap comments
--- 'r': auto-insert comment leader on <Enter>
--- 'o': auto-insert comment leader on 'o' or 'O'
-vim.opt.formatoptions:remove({ "c", "r", "o" })
+vim.opt.relativenumber = false
 
 if vim.g.neovim_mode == "skitty" then
-  vim.opt.relativenumber = false
   vim.opt.laststatus = 0
   vim.opt.statusline = "%m"
   vim.opt.number = false
-  vim.opt.relativenumber = false
   vim.opt.statusline = "%m"
   vim.opt.signcolumn = "no"
   vim.opt.textwidth = 80
 
   -- Changes the top of the bar to have the file name (date) and my name
-  vim.opt.winbar = " %{expand('%:t:r')} %= tonycs "
+  vim.opt.winbar = "%{expand('%:t:r')} %= tonycs "
 
   vim.keymap.set("n", "o", function()
     local line = vim.api.nvim_get_current_line()
@@ -68,9 +61,9 @@ if vim.g.neovim_mode == "skitty" then
   end)
 
   local function to_do_template()
-    -- local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
+    local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
     local template = {
-      -- "# " .. date,
+      date,
       "- [ ] ",
     }
 
@@ -88,7 +81,7 @@ if vim.g.neovim_mode == "skitty" then
     end,
   })
 
-  -- This auto-syncs to gij
+  -- -- This auto-syncs to git
   -- vim.api.nvim_create_autocmd("BufWritePost", {
   --   pattern = "*.md", -- Only sync markdown files (or use "*" for all)
   --   callback = function()
