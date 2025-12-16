@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>D", function()
   Snacks.dashboard.open()
 end, { desc = "Open Dashboard" })
 
-vim.keymap.set("n", "<leader>m", function()
+vim.keymap.set("n", "<leader>mp", function()
   vim.cmd("MarkdownPreview")
 end, { desc = "Run MarkdownPreview" })
 
@@ -36,5 +36,7 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-/><C-n>", { desc = "Go to normal mode" })
 
 vim.keymap.set("n", "<leader>uu", "<leader>ufuu<leader>uf", { desc = "Undo without auto-formatter" })
 
--- Write Goyo command twice to reset Goyo mode
-vim.keymap.set("n", "<leader>gy", ":Goyo<CR>:Goyo<CR>", { desc = "Reset Goyo mode" })
+vim.keymap.set("n", "<leader>gy", ":Goyo<CR>", { desc = "Reset Goyo mode" })
+
+vim.keymap.set("v", "<leader>mb", 'c**<C-r>"**<Esc>', { desc = "Markdown Bold" })
+vim.keymap.set("v", "<leader>mi", 'c*<C-r>"*<Esc>', { desc = "Markdown Italic" })
