@@ -17,10 +17,15 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = vim.fn.expand("~") .. "/growth/*",
+  pattern = {
+    vim.fn.expand("~") .. "/growth/*",
+    vim.fn.expand("~") .. "/Documents/book/*",
+  },
+
   callback = function()
     vim.opt.winbar = ""
     vim.opt.signcolumn = "no"
+    vim.opt.number = false
 
     -- Hide the split separators of the windows (horizontal and vertical lines)
     -- This replaces the line characters with empty spaces

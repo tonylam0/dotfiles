@@ -40,3 +40,9 @@ vim.keymap.set("n", "<leader>gy", ":Goyo<CR>", { desc = "Reset Goyo mode" })
 
 vim.keymap.set("v", "<leader>mb", 'c**<C-r>"**<Esc>', { desc = "Markdown Bold" })
 vim.keymap.set("v", "<leader>mi", 'c*<C-r>"*<Esc>', { desc = "Markdown Italic" })
+
+vim.keymap.set("n", "<leader>ll", "\\ll:cclose<CR>", { desc = "Vimtex compilation", remap = true })
+vim.keymap.set("n", "<leader>lc", ":cclose<CR>", { desc = "Close vimtex window" })
+vim.keymap.set("n", "<leader>ld", "\\lC", { desc = "Clean vimtex temporary files", remap = true })
+
+vim.keymap.set("n", "<leader>mm", "%", { desc = "Go to matching pair" })

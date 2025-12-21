@@ -15,6 +15,7 @@ vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.g.netrw_hide = 0
 vim.opt.relativenumber = false
+vim.g.lazyvim_inlay_hints = false
 
 if vim.g.neovim_mode == "skitty" then
   vim.opt.laststatus = 0
@@ -61,9 +62,9 @@ if vim.g.neovim_mode == "skitty" then
   end)
 
   local function to_do_template()
-    local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
+    -- local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
     local template = {
-      date,
+      -- date,
       "- [ ] ",
     }
 

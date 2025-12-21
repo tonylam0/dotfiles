@@ -1,29 +1,33 @@
 :root {
-    /* Base background: #1d2021 converted to RGBA */
-    --gruv-bg: rgba(29, 32, 33, 0.85) !important; 
-    
-    /* Active card background: #32302f converted to RGBA */
-    --gruv-card: rgba(50, 48, 47, 0.90) !important; 
-    
-    /* Text colors */
-    --gruv-fg: #ebdbb2 !important;      /* Cream Text */
-    --gruv-muted: #a89984 !important;   /* Dimmed Text */
-    
-    /* Accents */
-    --gruv-yellow: #d79921 !important;  /* Gold Accent */
-    --gruv-border: rgba(80, 73, 69, 0.5) !important; /* Subtle border */
-    
-    /* MAPPING VARIABLES */
-    --toolbar-bgcolor: var(--gruv-bg) !important;
-    --tab-selected-bgcolor: var(--gruv-card) !important;
-    --lwt-selected-tab-background-color: var(--gruv-card) !important;
-    --chrome-content-separator-color: var(--gruv-bg) !important;
-    --urlbar-background: var(--gruv-card) !important;
-    --tab-min-height: 32px !important; 
+  /* Base background: #1d2021 converted to RGBA */
+  /* --gruv-bg: rgba(29, 32, 33, 0.85) !important; */
+  /**/
+  /* /* Active card background: #32302f converted to RGBA */ */
+  /* --gruv-card: rgba(50, 48, 47, 0.90) !important; */
+  /**/
+  /* /* Text colors */ */
+  /* --gruv-fg: #ebdbb2 !important; */
+  /* /* Cream Text */ */
+  /* --gruv-muted: #a89984 !important; */
+  /* /* Dimmed Text */ */
+  /**/
+  /* /* Accents */ */
+  /* --gruv-yellow: #d79921 !important; */
+  /* /* Gold Accent */ */
+  /* --gruv-border: rgba(80, 73, 69, 0.5) !important; */
+  /* /* Subtle border */ */
+  /**/
+  /* /* MAPPING VARIABLES */ */
+  /* --toolbar-bgcolor: var(--gruv-bg) !important; */
+  /* --tab-selected-bgcolor: var(--gruv-card) !important; */
+  /* --lwt-selected-tab-background-color: var(--gruv-card) !important; */
+  /* --chrome-content-separator-color: var(--gruv-bg) !important; */
+  /* --urlbar-background: var(--gruv-card) !important; */
+  /* --tab-min-height: 32px !important; */
 }
 
 /* Global font and size */
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace !important;
-    font-size: 13px !important;
+  font-family: "JetBrainsMono Nerd Font", monospace !important;
+  font-size: 13px !important;
 }
