@@ -1,0 +1,73 @@
+\RequirePackage{fix-cm}
+\documentclass{report}
+
+\input{preamble}
+
+\title{\Huge{Course Code}\\Name of class}
+\author{\huge{Tony Lam}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\pagebreak
+
+\chapter{Style Verification}
+\section{Box Environments}
+
+\dfn{Sample Definition}{This tests the red header box style with variable width.}
+
+\mlemma{Consistency}{All boxes should respect the chapter-based numbering.}
+
+\mprop{Simple Math}{Testing math shortcuts: $\bbR$, $\bbC$, and $\eps$.}
+
+\cor{Visual Polish}{Corollaries use the purple accent color.}
+
+\clm{Design}{}{The Claim box uses a green borderline west style.}
+
+\ex{Working Example}{
+    This tests the teal-framed example box.
+    \begin{equation}
+        \|x\|_p = \left( \sum_{i=1}^n |x_i|^p \right)^{1/p}
+    \end{equation}
+}
+
+\subsection{Test subsection}
+The art of yapping they say.
+
+\chapter{Interaction \& Logic}
+\section{Problem Solving}
+
+\qs{Logical Test}{Does the Question counter reset at the start of a new chapter?}
+
+\sol
+This is the solution environment. Note how the green header aligns with the question box above it.
+\endsol
+
+\nt{This is a floating note with a drop shadow. It is useful for highlighting non-critical but helpful information.}
+
+\section{Algorithms \& Math}
+
+\begin{algorithm}[H]
+    \KwIn{Initial LaTeX code}
+    \KwOut{Cleaned PDF}
+    \SetAlgoLined
+    \tcc{Test of algorithm2e styling}
+    \If{Compile is successful}{
+        Keep working\;
+    }
+    \Else{
+        Check the log file\;
+    }
+    \caption{The Cleanup Process}
+\end{algorithm}
+
+\section{Proof Styling}
+\begin{myproof}[Custom Proof Name]
+    We use the \texttt{myproof} environment to ensure the QED symbol is the custom smiley face \tikzsymbolsuse{Laughey} defined in the preamble.
+\end{myproof}
+
+\end{document}
