@@ -6,26 +6,16 @@ return {
       texlab = {
         settings = {
           texlab = {
-            build = {
-              executable = "latexmk",
-              args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
-              onSave = true,
-              forwardSearchAfter = false,
-            },
-            forwardSearch = {
-              executable = "open",
-              args = { "-a", "Skim", "%p" },
-            },
             chktex = {
               onOpenAndSave = false,
               onEdit = false,
             },
+            diagnostics = {
+              ignoredPatterns = { "Shell escape disabled" },
+            },
             diagnosticsDelay = 500,
             latexFormatter = "none",
           },
-        },
-        flags = {
-          debounce_text_changes = 500,
         },
       },
 

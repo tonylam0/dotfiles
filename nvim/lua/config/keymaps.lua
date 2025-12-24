@@ -41,8 +41,19 @@ vim.keymap.set("n", "<leader>gy", ":Goyo<CR>", { desc = "Reset Goyo mode" })
 vim.keymap.set("v", "<leader>mb", 'c**<C-r>"**<Esc>', { desc = "Markdown Bold" })
 vim.keymap.set("v", "<leader>mi", 'c*<C-r>"*<Esc>', { desc = "Markdown Italic" })
 
-vim.keymap.set("n", "<leader>ll", "\\ll:cclose<CR>", { desc = "Vimtex compilation", remap = true })
+vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Vimtex compilation (One-shot)", remap = true })
 vim.keymap.set("n", "<leader>lc", ":cclose<CR>", { desc = "Close vimtex window" })
 vim.keymap.set("n", "<leader>ld", "\\lC", { desc = "Clean vimtex temporary files", remap = true })
 
 vim.keymap.set("n", "<leader>mm", "%", { desc = "Go to matching pair" })
+
+vim.keymap.set("n", "<leader>sw", ":set wrap<CR>", { desc = "Activate wrap" })
+
+vim.keymap.set("v", "q", 'gsa"', { desc = "Surround in quotes", remap = true })
+vim.keymap.set("v", "mi", "gsa*", { desc = "Make word italic in markdown", remap = true })
+vim.keymap.set("v", "mb", "2gsa*", { desc = "Make word bold in markdown", remap = true })
+vim.keymap.set("v", "mc", "gsa}", { desc = "Surround in curly braces", remap = true })
+vim.keymap.set("v", "mp", "gsa)", { desc = "Surround in parentheses", remap = true })
+vim.keymap.set("v", "ms", "gsa]", { desc = "Surround in square brackets", remap = true })
+
+vim.keymap.set("v", "md", "<Tab>d2", { desc = "Delete multiple files", remap = true })

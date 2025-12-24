@@ -279,6 +279,39 @@ return {
 
       ls.add_snippets("javascriptreact", {
         s(
+          "note",
+          fmt(
+            [[
+            import Post from "../components/Post/Post.jsx"
+            import ReactMarkdown from 'react-markdown'
+            import rehypeExternalLinks from 'rehype-external-links'
+            import content from '../markdown/<>.md?raw'
+
+            const <> = () =>> {
+              return (
+                <<>>
+                  <<Post date={"<>"}>>
+                    <<ReactMarkdown rehypePlugins={[[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }%]%]}>>{content}<</ReactMarkdown>>
+                  <</Post>>
+                <</>>
+              )
+            }
+
+            export default <>
+          ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              rep(2),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("javascriptreact", {
+        s(
           "rf",
           fmt(
             [[
@@ -298,6 +331,65 @@ return {
               i(1),
               i(2),
               i(3),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("javascriptreact", {
+        s("br", {
+          t("<br />"),
+        }),
+      })
+
+      -- Markdown Snippets
+      ls.add_snippets("markdown", {
+        s("br", {
+          t("<br />"),
+        }),
+      })
+
+      ls.add_snippets("markdown", {
+        s(
+          "i",
+          fmt(
+            [[
+            *<>*
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("markdown", {
+        s(
+          "b",
+          fmt(
+            [[
+            **<>**
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("markdown", {
+        s(
+          "link",
+          fmt(
+            [[
+            [<>](<>)
+          ]],
+            {
+              i(1),
+              i(2),
             },
             { delimiters = "<>" }
           )

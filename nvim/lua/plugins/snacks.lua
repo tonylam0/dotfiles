@@ -13,6 +13,8 @@ return {
               width = 30,
             },
           },
+
+          trash = "trash",
         },
       },
     },

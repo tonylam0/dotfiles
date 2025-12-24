@@ -19,7 +19,6 @@ vim.g.lazyvim_inlay_hints = false
 
 if vim.g.neovim_mode == "skitty" then
   vim.opt.laststatus = 0
-  vim.opt.statusline = "%m"
   vim.opt.number = false
   vim.opt.statusline = "%m"
   vim.opt.signcolumn = "no"
@@ -38,7 +37,7 @@ if vim.g.neovim_mode == "skitty" then
     end
   end, { expr = true })
 
-  -- B. Auto-create new task when pressing 'Enter' in Insert Mode
+  -- Auto-create new task when pressing 'Enter' in Insert Mode
   vim.keymap.set("i", "<CR>", function()
     local line = vim.api.nvim_get_current_line()
     if line:match("%- %[.%]") then
@@ -62,6 +61,7 @@ if vim.g.neovim_mode == "skitty" then
   end)
 
   local function to_do_template()
+    -- Uncomment date lines if you want to include date at the top
     -- local date = os.date("%A, %B %d, %Y") -- Ex. "Friday, November 21, 2025"
     local template = {
       -- date,
@@ -69,7 +69,9 @@ if vim.g.neovim_mode == "skitty" then
     }
 
     vim.api.nvim_buf_set_lines(0, 0, -1, false, template)
-    vim.api.nvim_win_set_cursor(0, { 1, 6 }) -- Puts cursor at first task box
+
+    local last_line = vim.api.nvim_buf_line_count(0)
+    vim.api.nvim_win_set_cursor(0, { last_line, 6 }) -- Puts cursor at first task box
     vim.cmd("startinsert!") -- Exclamation mark sets cursor after character
   end
 
