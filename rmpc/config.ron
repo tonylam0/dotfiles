@@ -1,6 +1,6 @@
 (
     address: "127.0.0.1:6600",
-    theme: Some("gruvbox"),
+    theme: Some("catppuccin"),
     cache_dir: None,
     on_click: None,
     album_art: (

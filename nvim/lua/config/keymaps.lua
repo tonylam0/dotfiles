@@ -57,3 +57,8 @@ vim.keymap.set("v", "mp", "gsa)", { desc = "Surround in parentheses", remap = tr
 vim.keymap.set("v", "ms", "gsa]", { desc = "Surround in square brackets", remap = true })
 
 vim.keymap.set("v", "md", "<Tab>d2", { desc = "Delete multiple files", remap = true })
+vim.keymap.set("n", "<leader>lr", "<Cmd>d2", { desc = "Delete multiple files", remap = true })
+
+vim.keymap.set("n", "ciS", "ci]", { desc = "Change inside []" })
+vim.keymap.set("n", "diS", "di]", { desc = "Delete inside []" })
+vim.keymap.set("v", "iS", "i]", { desc = "Select inside []" })

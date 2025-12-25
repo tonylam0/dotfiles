@@ -21,12 +21,6 @@ return {
 
       ls.add_snippets("tex", {
         s("vs", {
-          t("\\vs"),
-        }),
-      })
-
-      ls.add_snippets("tex", {
-        s("ls", {
           t("\\vspace{.5cm}"),
         }),
       })
@@ -206,6 +200,38 @@ return {
           fmt(
             [[
             \expl{<>}
+        ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("tex", {
+        s(
+          "dr",
+          fmt(
+            [[
+            \draw{<>}
+        ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("tex", {
+        s(
+          "denv",
+          fmt(
+            [[
+            \begin{tikzpicture}
+              <>
+            \end{tikzpicture}
         ]],
             {
               i(1),

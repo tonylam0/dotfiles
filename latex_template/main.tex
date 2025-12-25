@@ -67,7 +67,112 @@ This is the solution environment. Note how the green header aligns with the ques
 
 \section{Proof Styling}
 \begin{myproof}[Custom Proof Name]
-    We use the \texttt{myproof} environment to ensure the QED symbol is the custom smiley face \tikzsymbolsuse{Laughey} defined in the preamble.
+    We use the \texttt{myproof} environment to ensure the QED symbol is the custom smiley face defined in the preamble.
 \end{myproof}
+
+\chapter{Graphs}
+\textbf{Types:}
+\begin{itemize}
+  \item Nodes
+  \item Trees
+  \item Arrays
+  \item Arrows
+  \item{Venn Diagrams}
+\end{itemize}
+
+\section{Nodes}
+\textbf{Basic Syntax: } \verb|\node[options] (name) at (0, 0) {Text Content};|
+\vspace{.5cm}
+\begin{center}
+  \begin{tikzpicture}
+    \node[draw, circle, fill=yellow, minimum size=5cm] (A) at (0, 0) {Example of circle};
+    \node[draw, rectangle, rounded corners=5pt, minimum width=4cm, right= of A] (B) {Example of relative positioning};
+    \draw[->, shorten >=5pt, shorten <=5pt] (A) -- (B);
+  \end{tikzpicture}
+\end{center}
+
+\section{Trees}
+
+\subsection{Normal text tree}
+\vspace{.5cm}
+\begin{center}
+  \begin{forest}
+    [Root
+      [Left child]
+      [Right child
+        [,phantom]  % Used to keep edge diagonal
+        [Grandchild]
+      ]
+    ]
+  \end{forest}
+\end{center}
+
+\subsection{Binary Search Trees}
+\vspace{.5cm}
+\begin{center}
+  \begin{forest}
+    for tree={
+      circle,
+      draw,
+      minimum size=2em,
+      inner sep=1pt,
+      l sep=30pt, % Vertical distance
+      s sep=20pt  % Horizontal distance
+    }
+    [15
+      [10
+        [5]
+        [12]
+      ]
+      [20
+        [,phantom]
+        [25]
+      ]
+    ]
+  \end{forest}
+\end{center}
+
+\section{Arrays}
+\vspace{.5cm}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Index & 0 & 1 & 2 & 3 & 4 \\ \hline
+        Value & \textbf{10} & \textbf{22} & \textbf{35} & \textbf{40} & \textbf{51} \\ \hline
+    \end{tabular}
+    \caption{Array via tabular}
+\end{table}
+
+\begin{figure}[h] % [h] forces it to stay "here" as much as possible
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] (0,0) grid (5,1);
+        \node at (0.5, 0.5) {10};
+        \node at (1.5, 0.5) {22};
+        \node at (2.5, 0.5) {35};
+        \node at (3.5, 0.5) {40};
+        \node at (4.5, 0.5) {51};
+    \end{tikzpicture}
+    \caption{Array via tikzpicture}
+\end{figure}
+
+\section{Arrows}
+\begin{center}
+  \begin{tikzpicture}
+    \draw (0,0) circle (1cm);
+    \draw[->] (2,0) -- (4,0);
+    \draw (6,0) circle (1cm);
+  \end{tikzpicture}
+\end{center}
+
+\section{Venn Diagrams}
+\begin{center}
+  \begin{tikzpicture}[thick, set/.style={circle, draw, minimum size=3cm, inner sep=0pt}]
+    \node[set, label={135:$a_1$}, fill=blue, fill opacity=.5] (a1) at (90:1cm) {};
+    \node[set, label={-45:$a_2$}, fill=red, fill opacity=.5] (a2) at (330:1cm) {};
+    \node[set, label={225:$a_3$}, fill=green, fill opacity=.5] (a3) at (210:1cm) {};
+  \end{tikzpicture}
+\end{center}
 
 \end{document}

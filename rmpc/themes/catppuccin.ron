@@ -1,0 +1,210 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+    default_album_art_path: None,
+    show_song_table_header: true,
+    draw_borders: true,
+    format_tag_separator: " | ",
+    browser_column_widths: [20, 38, 42],
+    
+    // Catppuccin Mocha Background & Foreground
+    background_color: "#1e1e2e",
+    text_color: "#cdd6f4",
+    header_background_color: "#1e1e2e",
+    modal_background_color: "#1e1e2e",
+    
+    modal_backdrop: false,
+    preview_label_style: (fg: "#f9e2af"), // Mocha Yellow
+    preview_metadata_group_style: (fg: "#f9e2af", modifiers: "Bold"),
+
+    tab_bar: (
+        // Active: Bg=#cba6f7 (Mauve), Fg=#1e1e2e (Dark)
+        active_style: (fg: "#1e1e2e", bg: "#cba6f7", modifiers: "Bold"),
+        inactive_style: (),
+    ),
+
+    highlighted_item_style: (fg: "#cba6f7", modifiers: "Bold"),
+    current_item_style: (fg: "#1e1e2e", bg: "#cba6f7", modifiers: "Bold"),
+    borders_style: (fg: "#585b70"), // Mocha Surface2 (Subtle borders)
+    highlight_border_style: (fg: "#cba6f7"),
+
+    symbols: (
+        song: "S",
+        dir: "D",
+        playlist: "P",
+        marker: "M",
+        ellipsis: "...",
+        song_style: None,
+        dir_style: None,
+        playlist_style: None,
+    ),
+
+    level_styles: (
+        info: (fg: "#89b4fa", bg: "#1e1e2e"), // Blue
+        warn: (fg: "#f9e2af", bg: "#1e1e2e"), // Yellow
+        error: (fg: "#f38ba8", bg: "#1e1e2e"), // Red
+        debug: (fg: "#a6e3a1", bg: "#1e1e2e"), // Green
+        trace: (fg: "#f5c2e7", bg: "#1e1e2e"), // Pink
+    ),
+
+    progress_bar: (
+        // [Start, Fill, Thumb, Track, End]
+        symbols: ["", "█", "█", "█", ""],
+        track_style: (fg: "#313244"), // Mocha Surface0
+        elapsed_style: (fg: "#fab387"), // Mocha Peach
+        thumb_style: (fg: "#f5e0dc"),   // Mocha Rosewater
+        use_track_when_empty: true,
+    ),
+
+    scrollbar: (
+        symbols: ["│", "█", "▲", "▼"],
+        track_style: (),
+        ends_style: (),
+        thumb_style: (fg: "#cba6f7"), // Mocha Mauve
+    ),
+
+    song_table_format: [
+        (
+            prop: (kind: Property(Artist),
+                default: (kind: Text("Unknown"))
+            ),
+            width: "20%",
+        ),
+        (
+            prop: (kind: Property(Title),
+                default: (kind: Text("Unknown"))
+            ),
+            width: "35%",
+        ),
+        (
+            prop: (kind: Property(Album), style: (fg: "#a6adc8"), // Mocha Subtext0
+                default: (kind: Text("Unknown Album"), style: (fg: "#a6adc8"))
+            ),
+            width: "30%",
+        ),
+        (
+            prop: (kind: Property(Duration),
+                default: (kind: Text("-"))
+            ),
+            width: "15%",
+            alignment: Right,
+        ),
+    ],
+
+    components: {},
+    layout: Split(
+        direction: Vertical,
+        panes: [
+            (
+                pane: Pane(Header),
+                size: "2",
+            ),
+            (
+                pane: Pane(Tabs),
+                size: "3",
+            ),
+            (
+                pane: Pane(TabContent),
+                size: "100%",
+            ),
+            (
+                pane: Pane(ProgressBar),
+                size: "1",
+            ),
+        ],
+    ),
+
+    header: (
+        rows: [
+            (
+                left: [
+                    (kind: Text("["), style: (fg: "#cba6f7", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "#cba6f7", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#cba6f7", modifiers: "Bold"))
+                ],
+                center: [
+                    (kind: Property(Song(Artist)), style: (fg: "#cba6f7", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "#cba6f7", modifiers: "Bold"))
+                    ),
+                    (kind: Text(" - "), style: (fg: "#cba6f7", modifiers: "Bold")),
+                    (kind: Property(Song(Album)), style: (fg: "#cba6f7", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Album"), style: (fg: "#cba6f7", modifiers: "Bold"))
+                    )
+                ],
+                right: [
+                    (kind: Property(Widget(ScanStatus)), style: (fg: "#cba6f7")),
+                    (kind: Property(Widget(Volume)), style: (fg: "#cba6f7"))
+
+                ]
+            ),
+            (
+                left: [
+                    (kind: Property(Status(Elapsed))),
+                    (kind: Text(" / ")),
+                    (kind: Property(Status(Duration))),
+                    (kind: Text(" (")),
+                    (kind: Property(Status(Bitrate))),
+                    (kind: Text(" kbps)"))
+                ],
+                center: [
+                    (kind: Property(Song(Title)), style: (modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (modifiers: "Bold"))
+                    )
+                ],
+                right: [
+                    (
+                        kind: Property(Widget(States(
+                            active_style: (fg: "#cdd6f4", modifiers: "Bold"),
+                            separator_style: (fg: "#cdd6f4")))
+                        ),
+                        style: (fg: "#a6adc8") // Mocha Subtext0
+                    ),
+                ]
+            ),
+        ],
+    ),
+
+    browser_song_format: [
+        (
+            kind: Group([
+                (kind: Property(Artist)),
+                (kind: Text(" - ")),
+                (kind: Property(Title)),
+            ]),
+            default: (kind: Property(Filename))
+        ),
+    ],
+
+    lyrics: (
+        timestamp: true
+    ),
+
+    cava: (
+        // symbols that will be used to draw the bar in the visualiser, in ascending order of
+        // fill fraction
+        bar_symbols: [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
+        // similar to bar_symbols but these are used for the top-down rendering, meaning for orientation
+        // "Horizontal" and "Top"
+        inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
+
+        bar_width: 2, // width of a single bar in columns
+        bar_spacing: 1, // free space between bars in columns
+
+        // Possible values are "Top", "Bottom" and "Horizontal". Top makes the bars go from top to
+        // bottom, "Bottom" is from bottom up, and "Horizontal" is split in the middle with bars going
+        // both down and up from there.
+        // Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
+        orientation: Bottom,
+
+        bar_color: Single("#585b70"), // Mocha Surface2
+
+        // bar_color: Gradient({
+        //    0:  "#cba6f7",    // Mauve
+        //    30:  "#89b4fa",   // Blue
+        //    60:  "#a6e3a1",   // Green
+        //    90:  "#f9e2af",   // Yellow
+        //    100: "#f38ba8",   // Red
+        // })
+    ),
+)

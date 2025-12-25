@@ -5,10 +5,10 @@ local subtle_gray = "#928374"
 local comp_gold = "#458588" -- Complimentary color to cosmic_gold
 
 -- Apply these colors to the Dashboard
-vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = cosmic_gold, bold = true }) -- The Header Art
-vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = cosmic_orange, bold = true }) -- The Keys (1, 2, f)
-vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = cosmic_gold }) -- The text descriptions
-vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = cosmic_gold }) -- Icons
+-- vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = cosmic_gold, bold = true }) -- The Header Art
+-- vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = cosmic_orange, bold = true }) -- The Keys (1, 2, f)
+-- vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = cosmic_gold }) -- The text descriptions
+-- vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = cosmic_gold }) -- Icons
 
 vim.g.neovim_mode = vim.env.NEOVIM_MODE or "default"
 vim.opt.swapfile = false
