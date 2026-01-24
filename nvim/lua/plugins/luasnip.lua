@@ -26,6 +26,12 @@ return {
       })
 
       ls.add_snippets("tex", {
+        s("sh", {
+          t("\\"),
+        }),
+      })
+
+      ls.add_snippets("tex", {
         s("mul", {
           t("\\cdot"),
         }),
@@ -118,10 +124,25 @@ return {
 
       ls.add_snippets("tex", {
         s(
+          "fr",
+          fmt(
+            [[
+          \frac{<>}{<>}
+        ]],
+            {
+              i(1),
+              i(2),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("tex", {
+        s(
           "sec",
           fmt(
             [[
-          \vs
           \section{<>}
         ]],
             {
@@ -271,6 +292,21 @@ return {
         ),
       })
 
+      ls.add_snippets("tex", {
+        s(
+          "sl",
+          fmt(
+            [[
+            \<>
+        ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
       -- React Snippets
       ls.add_snippets("javascriptreact", {
         s(
@@ -278,9 +314,25 @@ return {
           fmt(
             [[
             className={styles.<>}
-        ]],
+            ]],
             {
               i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("javascriptreact", {
+        s(
+          "ms",
+          fmt(
+            [[
+            className={`${<>} ${<>}`}
+            ]],
+            {
+              i(1),
+              i(2),
             },
             { delimiters = "<>" }
           )
@@ -327,9 +379,9 @@ return {
           ]],
             {
               i(1),
+              rep(1),
               i(2),
-              i(3),
-              rep(2),
+              rep(1),
             },
             { delimiters = "<>" }
           )
@@ -355,8 +407,8 @@ return {
           ]],
             {
               i(1),
-              i(2),
-              i(3),
+              rep(1),
+              rep(1),
             },
             { delimiters = "<>" }
           )
@@ -416,6 +468,150 @@ return {
             {
               i(1),
               i(2),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "mobile",
+          fmt(
+            [[
+            @media (max-width: 480px) {
+              <>
+            }
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "tablet",
+          fmt(
+            [[
+            @media (max-width: 768px) {
+              <>
+            }
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "desktop",
+          fmt(
+            [[
+            @media (max-width: 1024px) {
+              <>
+            }
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "large",
+          fmt(
+            [[
+            @media (max-width: 1200px) {
+              <>
+            }
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "media",
+          fmt(
+            [[
+            @media (max-width: 1200px) {
+              <>
+            }
+
+            @media (max-width: 1024px) {
+              <>
+            }
+
+            @media (max-width: 768px) {
+              <>
+            }
+
+            @media (max-width: 480px) {
+              <>
+            }
+          ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              i(4),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("css", {
+        s(
+          "c",
+          fmt(
+            [[
+            /* <> */
+          ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      -- Java snippets
+      ls.add_snippets("java", {
+        s(
+          "cp",
+          fmt(
+            [[
+            import java.io.*;
+            import java.util.*;
+
+            public class <> {
+              public static void main(String[] args) throws IOException {
+                BufferedReader r = new BufferedReader(new FileReader("<>.in"));
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("<>.out")));
+
+                r.close();
+                pw.close();
+              }
+            }
+            ]],
+            {
+              i(1),
+              rep(1),
+              rep(1),
             },
             { delimiters = "<>" }
           )

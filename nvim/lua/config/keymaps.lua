@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>p", ":put _<CR>", { desc = "Add blank line below" }
 
 vim.keymap.set("n", "yy", "y0", { desc = "Yank to start of line" })
 vim.keymap.set("n", "yu", "y$", { desc = "Yank to end of line" })
-vim.keymap.set("n", "yi", "yG", { desc = "Yank to last line" })
+vim.keymap.set("n", "ygh", "yG", { desc = "Yank to last line" })
 -- No need to make a keymap for yanking to first line -> ygg
 
 -- Lua based function to avoid mistiming issues

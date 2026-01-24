@@ -1,8 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    inlay_hints = { enabled = false },
     servers = {
-      -- 1. Your existing TexLab configuration
       texlab = {
         settings = {
           texlab = {
@@ -15,31 +15,6 @@ return {
             },
             diagnosticsDelay = 500,
             latexFormatter = "none",
-          },
-        },
-      },
-
-      vtsls = {
-        settings = {
-          typescript = {
-            inlayHints = {
-              functionLikeReturnTypes = { enabled = false },
-              parameterNames = { enabled = false },
-              parameterTypes = { enabled = false },
-              variableTypes = { enabled = false },
-              propertyDeclarationTypes = { enabled = false },
-              enumMemberValues = { enabled = false },
-            },
-          },
-          javascript = {
-            inlayHints = {
-              functionLikeReturnTypes = { enabled = false },
-              parameterNames = { enabled = false },
-              parameterTypes = { enabled = false },
-              variableTypes = { enabled = false },
-              propertyDeclarationTypes = { enabled = false },
-              enumMemberValues = { enabled = false },
-            },
           },
         },
       },

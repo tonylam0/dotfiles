@@ -105,14 +105,6 @@
                 pane: Pane(Cava),
             ),
             (
-                name: "Artists",
-                pane: Pane(Artists),
-            ),
-            (
-                name: "Albums",
-                pane: Pane(Albums),
-            ),
-            (
                 name: "Playlists",
                 pane: Pane(Playlists),
             ),

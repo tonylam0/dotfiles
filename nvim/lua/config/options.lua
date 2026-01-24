@@ -15,7 +15,8 @@ vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.g.netrw_hide = 0
 vim.opt.relativenumber = false
-vim.g.lazyvim_inlay_hints = false
+vim.g.lazyvim_check_special_chars = false
+vim.g.lazyvim_lsp_inlay_hints = false
 
 if vim.g.neovim_mode == "skitty" then
   vim.opt.laststatus = 0
