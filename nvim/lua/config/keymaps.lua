@@ -62,3 +62,5 @@ vim.keymap.set("n", "<leader>lr", "<Cmd>d2", { desc = "Delete multiple files", r
 vim.keymap.set("n", "ciS", "ci]", { desc = "Change inside []" })
 vim.keymap.set("n", "diS", "di]", { desc = "Delete inside []" })
 vim.keymap.set("v", "iS", "i]", { desc = "Select inside []" })
+
+vim.keymap.set("x", "p", [["_dP]])

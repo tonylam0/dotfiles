@@ -2,22 +2,22 @@
   /* Base background: #1d2021 converted to RGBA */
   /* --gruv-bg: rgba(29, 32, 33, 0.85) !important; */
   /**/
-  /* /* Active card background: #32302f converted to RGBA */ */
+  /* /* Active card background: #32302f converted to RGBA */
   /* --gruv-card: rgba(50, 48, 47, 0.90) !important; */
   /**/
-  /* /* Text colors */ */
+  /* /* Text colors */
   /* --gruv-fg: #ebdbb2 !important; */
-  /* /* Cream Text */ */
+  /* /* Cream Text */
   /* --gruv-muted: #a89984 !important; */
-  /* /* Dimmed Text */ */
+  /* /* Dimmed Text */
   /**/
-  /* /* Accents */ */
+  /* /* Accents */
   /* --gruv-yellow: #d79921 !important; */
-  /* /* Gold Accent */ */
+  /* /* Gold Accent */
   /* --gruv-border: rgba(80, 73, 69, 0.5) !important; */
-  /* /* Subtle border */ */
+  /* /* Subtle border */
   /**/
-  /* /* MAPPING VARIABLES */ */
+  /* /* MAPPING VARIABLES */
   /* --toolbar-bgcolor: var(--gruv-bg) !important; */
   /* --tab-selected-bgcolor: var(--gruv-card) !important; */
   /* --lwt-selected-tab-background-color: var(--gruv-card) !important; */

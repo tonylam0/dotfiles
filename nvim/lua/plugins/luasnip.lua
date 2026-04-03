@@ -170,6 +170,21 @@ return {
 
       ls.add_snippets("tex", {
         s(
+          "t",
+          fmt(
+            [[
+          \text{<>}
+        ]],
+            {
+              i(1),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+
+      ls.add_snippets("tex", {
+        s(
           "nt",
           fmt(
             [[
@@ -369,7 +384,7 @@ return {
               return (
                 <<>>
                   <<Post date={"<>"}>>
-                    <<ReactMarkdown rehypePlugins={[[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }%]%]}>>{content}<</ReactMarkdown>>
+                    <<ReactMarkdown rehypePlugins={[[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }\]\]}>>{content}<</ReactMarkdown>>
                   <</Post>>
                 <</>>
               )
@@ -600,8 +615,8 @@ return {
 
             public class <> {
               public static void main(String[] args) throws IOException {
-                BufferedReader r = new BufferedReader(new FileReader("<>.in"));
-                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("<>.out")));
+                BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
                 r.close();
                 pw.close();
@@ -610,8 +625,6 @@ return {
             ]],
             {
               i(1),
-              rep(1),
-              rep(1),
             },
             { delimiters = "<>" }
           )
