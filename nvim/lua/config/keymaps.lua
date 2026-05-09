@@ -32,7 +32,7 @@ vim.keymap.set("v", "gh", "G", { desc = "Last line" })
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without yanking" })
 vim.keymap.set("v", "x", '"_x', { desc = "Delete without yanking" })
 
-vim.keymap.set("t", "<Esc><Esc>", "<C-/><C-n>", { desc = "Go to normal mode" })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Go to normal mode" })
 
 vim.keymap.set("n", "<leader>uu", "<leader>ufuu<leader>uf", { desc = "Undo without auto-formatter" })
 
@@ -64,3 +64,4 @@ vim.keymap.set("n", "diS", "di]", { desc = "Delete inside []" })
 vim.keymap.set("v", "iS", "i]", { desc = "Select inside []" })
 
 vim.keymap.set("x", "p", [["_dP]])
+vim.keymap.set("t", "<C-`>", "<C-\\><C-n><cmd>vsplit | terminal<cr>i", { desc = "Terminal (Horizontal Split)" })
