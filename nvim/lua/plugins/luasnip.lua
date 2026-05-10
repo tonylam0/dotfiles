@@ -445,6 +445,25 @@ return {
 
       ls.add_snippets("markdown", {
         s(
+          "fr",
+          fmt(
+            [[
+              ---
+              title: <>
+              date: 2026-05-<>
+              tags: []
+              ---
+              ]],
+            {
+              i(1),
+              i(2),
+            },
+            { delimiters = "<>" }
+          )
+        ),
+      })
+      ls.add_snippets("markdown", {
+        s(
           "i",
           fmt(
             [[
