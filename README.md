@@ -22,15 +22,15 @@ This setup is primarily for macOS.
 
 Recommended tools/apps:
 
-- `[brew](https://brew.sh/)`
+- [brew](https://brew.sh/)
 - `yabai`
 - `skhd`
-- `[kitty](https://sw.kovidgoyal.net/kitty/)`
-- `[neovim](https://neovim.io/)`
-- `[yazi](https://yazi-rs.github.io/)`
-- `[btop](https://github.com/aristocratos/btop)`
+- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [neovim](https://neovim.io/)
+- [yazi](https://yazi-rs.github.io/)
+- [btop](https://github.com/aristocratos/btop)
 - `mpd` + `mpc` (used by `rmpc` and some keybindings)
-- `[Ubersicht](https://tracesof.net/uebersicht/)` (for `simple-bar`)
+- [Ubersicht](https://tracesof.net/uebersicht/) (for `simple-bar`)
 
 ## Install
 
