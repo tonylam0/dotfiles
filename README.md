@@ -23,14 +23,14 @@ This setup is primarily for macOS.
 Recommended tools/apps:
 
 - [brew](https://brew.sh/)
-- `yabai`
-- `skhd`
+- [yabai](https://github.com/asmvik/yabai)
+- [skhd](https://github.com/asmvik/skhd)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [neovim](https://neovim.io/)
 - [yazi](https://yazi-rs.github.io/)
 - [btop](https://github.com/aristocratos/btop)
-- `mpd` + `mpc` (used by `rmpc` and some keybindings)
-- [Ubersicht](https://tracesof.net/uebersicht/) (for `simple-bar`)
+- [mpd](https://www.musicpd.org/) + [mpc](https://www.musicpd.org/clients/mpc/) (used by [rmpc](https://github.com/mierak/rmpc) and some keybindings)
+- [simple-bar](https://www.jeantinland.com/toolbox/simple-bar/) (needs [Ubersicht](https://tracesof.net/uebersicht/))
 
 ## Install
 
